@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOODBOX</title>
+    <style>
+         body {
+        background: lightgrey;
+      }
+      .topo {
+        background: red;
+        color: white;
+        padding: 5px;
+        border-radius: 10pt;
+      }
+      .produto {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 5px;
+        cursor: pointer;
+        border: 5px solid white;
+      }
+      h1 {
+        margin: 0;
+      }
+      h2 {
+        margin: 0;
+        font-size: 18px;
+      }
+      h3 {
+        font-size: 30px;
+        margin-bottom: 5px;
+      }
+      h4 {
+        margin-top: 0;
+        margin-bottom: 5px;
+        font-size: 20px;
+      }
+      img {
+        width: 120px;
+        border-radius: 5px;
+        float: right;
+        margin: 0;
+      }
+      .botao{
+          background: green;
+          border-radius: 50px;
+          margin-top: 0;
+          padding: 15px;
+          text-align: center;
+                    
+      }
+
+    </style>
+</head>
+<body>
+    <div class="topo">
+        <h1>FoodBox</h1>
+        <h2>Monte seu box e receba em 15min!</h2>
+      </div>
+      <h3>Primeiro seu Prato!</h3>
+      <div id="frango" class="produto" onclick="escolherFrango()">
+        <img src="frango.jpg"/>
+        <h4>Frango Ying Yong</h4>
+        <p>Um pouco de batata e um pouco da salada</p>
+        <p><strong>R$: 19,90 reais</strong></p>
+      </div>
+      <div id="carne" class="produto" onclick="escolherCarne()">
+        <img src="carnesalada.jpg"/>
+        <h4>Carne e Salada</h4>
+        <p>Prato Fit</p>
+        <p><strong>R$: 24,90 reais</strong></p>
+      </div>
+      <h3>Agora sua Bebida!</h3>
+      <div id="refrigerante" class="produto" onclick="escolherRefrigerante()">
+        <img src="coca.jpg"/>
+        <h4>Refrigerante</h4>
+        <p>Coca-cola</p>
+        <p><strong>R$: 7,90 reais</strong></p>
+      </div>
+      <div id="suco" class="produto" onclick="escolherSuco()">
+        <img src="suco.jpg"/>
+        <h4>Sucos</h4>
+        <p>Suco Natural de Laranja</p>
+        <p><strong>R$: 5,90 reais</strong></p>
+      </div>
+      <h3>Vai uma Sobremesa?</h3>
+      <div id="pudim" class="produto" onclick="escolherPudim()">
+        <img src="pudim.jpg"/>
+        <h4>Pudim</h4>
+        <p>Pudim sem furinho é aqui!</p>
+        <p><strong>R$: 12,90 reais</strong></p>
+      </div>
+      <div id="sorvete" class="produto" onclick="escolherSorvete()">
+        <img src="sorvete.jpg"/>
+        <h4>Sorvete</h4>
+        <p>Creme</p>
+        <p><strong>R$: 10,90 reais</strong></p>
+      </div>
+      <div class="botao" onclick="finalizarPedido()">
+          <p><strong>Finalizar Pedido</strong></p>
+      </div>
+      <script>
+          let prato; //coloca fora das funçoes a variavel e chama dentro
+          let bebida;
+          let sobremesa;
+          function escolherFrango(){
+              document.getElementById("frango").style.borderColor = "green";
+              document.getElementById("carne").style.borderColor = "white";
+              prato = "frango";
+          }
+          function escolherCarne(){
+              document.getElementById("carne").style.borderColor = "green";
+              document.getElementById("frango").style.borderColor = "white";
+              prato = "carne";
+          }
+          function escolherRefrigerante(){
+              document.getElementById("refrigerante").style.borderColor = "green";
+              document.getElementById("suco").style.borderColor = "white";
+              bebida = "refrigerante";
+          }
+          function escolherSuco(){
+              document.getElementById("suco").style.borderColor = "green";
+              document.getElementById("refrigerante").style.borderColor = "white";
+              bebida = "suco"
+          }
+          function escolherPudim(){
+              document.getElementById("pudim").style.borderColor = "green";
+              document.getElementById("sorvete").style.borderColor = "white";
+              sobremesa = "pudim";
+          }
+          function escolherSorvete(){
+              document.getElementById("sorvete").style.borderColor = "green";
+              document.getElementById("pudim").style.borderColor = "white";
+              sobremesa = "sorvete";
+          }
+          function finalizarPedido(){
+              let mensagem;
+              mensagem = "olá gostaria de pedir um Combo: " + prato + " , " + bebida + " e " + sobremesa;
+              window.open("https://wa.me/+5541988082384?text=" + mensagem);
+
+          }
+          
+      </script>
+
+    
+</body>
+</html>
